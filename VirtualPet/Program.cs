@@ -27,12 +27,12 @@ namespace VirtualPet
                 Console.WriteLine("NOTE: If you do not have a pet, please create one!");
                 Console.WriteLine("1. Create a new organic pet");
                 Console.WriteLine("2. Create a new robotic pet");
-                Console.WriteLine("3. Display each pet status"); // add new menu option
+                Console.WriteLine("3. Display each pet status"); 
                 Console.WriteLine("4. Feed your Pet");
                 Console.WriteLine("5. Play with your Pet");
                 Console.WriteLine("6. Attend To Pet Health");
                 Console.WriteLine("7. Quit");
-                
+
                 string menuChoice = Console.ReadLine();
                 switch (menuChoice)
                 {
@@ -46,7 +46,7 @@ namespace VirtualPet
                         Console.ReadKey();
                         break;
                     case "2":
-                         Console.WriteLine("What is the name of your robotic pet?");
+                        Console.WriteLine("What is the name of your robotic pet?");
                         name = Console.ReadLine();
                         species = "Robot";
                         pet = new Robotic(name, species);
@@ -61,18 +61,21 @@ namespace VirtualPet
                         Console.ReadKey();
                         break;
                     case "4":
+                        pet = shelter.SelectPet();
                         pet.Feed();
                         Console.WriteLine($"You fed/oiled {pet.GetName()}.");
                         pet.Tick();
                         break;
                     case "5":
+                        pet = shelter.SelectPet();
                         pet.Play();
                         Console.WriteLine($"You and {pet.GetName()} played in the meadow together!");
                         pet.Tick();
                         break;
                     case "6":
+                        pet = shelter.SelectPet();
                         pet.AttendToPetHealth();
-                        Console.WriteLine($"You took {pet.GetName()} to the vet for health.");
+                        Console.WriteLine($"You took {pet.GetName()} to the vet/mechanic for their health.");
                         pet.Tick();
                         break;
                     case "7":
@@ -85,15 +88,8 @@ namespace VirtualPet
                 Console.WriteLine("Press Enter to continue.");
                 Console.ReadKey();
                 Console.Clear();
-                ///ConsoleKeyInfo keyInfo = Console.ReadKey();
-                ///while (keyInfo.Key != ConsoleKey.Enter)
-                   ///keyInfo = Console.ReadKey();
+
             }
-
-
-
-
-
 
         }
     }

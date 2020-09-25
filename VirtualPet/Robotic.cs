@@ -5,7 +5,7 @@ using System.Text;
 namespace VirtualPet
 {           
     public class Robotic : Pet
-    { //properties
+    {   //properties
         public int OilLevel { get; set; }
 
         public string Robot { get; set; }
@@ -40,7 +40,7 @@ namespace VirtualPet
         public override void Feed()
         {
             OilLevel += 40;
-            Console.WriteLine($"Your pet's {OilLevel} is sufficient");
+            Console.WriteLine($"Your pet's oil level is now sufficient.");
         }
 
         public override void Play()
@@ -59,8 +59,8 @@ namespace VirtualPet
 
         public override void DisplayStatus()
         {
-            Console.WriteLine($" {Name} {Species}:");
-            Console.WriteLine($"Oil Level:{GetOilLevel()}, Boredom {GetBoredom()}, Robot Health {GetHealth()}.\n");
+            Console.WriteLine($"{Name}, {Species}:");
+            Console.WriteLine($"Oil Level: {GetOilLevel()}, Boredom: {GetBoredom()}, Robot Health: {GetHealth()}.\n");
         }
     }
 
